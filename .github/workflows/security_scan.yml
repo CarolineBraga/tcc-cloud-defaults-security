@@ -1,0 +1,58 @@
+name: 'IaC Security Scan'
+
+on:
+  push:
+    branches:
+      - 'main'
+      - 'ft/**'
+  pull_request:
+    branches: ['main']
+    paths: ['**.tf', '**.tfvars', '.github/workflows/**']
+
+jobs:
+  validate-terraform:
+    name: 'Validar e Formatar Código Terraform'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout do código'
+        uses: actions/checkout@v4
+      - name: 'Configurar ambiente Terraform'
+        uses: hashicorp/setup-terraform@v3
+      - name: 'Terraform Init'
+        run: terraform init -backend=false
+      - name: 'Terraform Format Check'
+        run: terraform fmt -check -recursive
+      - name: 'Terraform Validate'
+        run: terraform validate
+
+  checkov-scan:
+    name: 'Análise com Checkov'
+    needs: validate-terraform
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    steps:
+      - name: 'Checkout do código'
+        uses: actions/checkout@v4
+        
+      - name: 'Executar Checkov e gerar relatórios'
+        uses: bridgecrewio/checkov-action@v12
+        with:
+          directory: '.'
+          framework: terraform
+          soft_fail: true
+          output_format: sarif,json
+          output_file_path: "checkov-results.sarif,checkov-results.json"
+
+      - name: 'Upload do resultado SARIF para o GitHub Security'
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: "checkov-results.sarif"
+
+      - name: 'Upload do relatório JSON como Artefato'
+        uses: actions/upload-artifact@v4
+        with:
+          name: checkov-report-json
+          path: checkov-results.json
