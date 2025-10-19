@@ -13,16 +13,22 @@ jobs:
   validate-terraform:
     name: 'Validar e Formatar Código Terraform'
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        tf_directory: ['gcp/01-gce', 'gcp/02-cloud-storage', 'gcp/03-cloud-sql', 'gcp/04-iam', 'gcp/05-gke']
     steps:
       - name: 'Checkout do código'
         uses: actions/checkout@v4
       - name: 'Configurar ambiente Terraform'
         uses: hashicorp/setup-terraform@v3
-      - name: 'Terraform Init'
+      - name: 'Terraform Init em ${{ matrix.tf_directory }}'
+        working-directory: ${{ matrix.tf_directory }}
         run: terraform init -backend=false
-      - name: 'Terraform Format Check'
+      - name: 'Terraform Format Check em ${{ matrix.tf_directory }}'
+        working-directory: ${{ matrix.tf_directory }}
         run: terraform fmt -check -recursive
-      - name: 'Terraform Validate'
+      - name: 'Terraform Validate em ${{ matrix.tf_directory }}'
+        working-directory: ${{ matrix.tf_directory }}
         run: terraform validate
 
   checkov-scan:
