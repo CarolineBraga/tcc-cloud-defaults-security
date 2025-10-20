@@ -1,0 +1,5 @@
+project_id       = "tcc-cloud-defaults-poc"
+region           = "us-central1"
+db_instance_name = "tcc-default-sql"
+database_version = "POSTGRES_14"
+db_tier          = "db-f1-micro"

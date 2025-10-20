@@ -1,0 +1,7 @@
+project_id     = "tcc-cloud-defaults-poc"
+region         = "us-central1"
+zone           = "us-central1-a"
+instance_name  = "tcc-default-instance"
+machine_type   = "e2-medium"
+instance_image = "debian-cloud/debian-11"
+network_name   = "default"
