@@ -16,16 +16,11 @@ Este diretório contém o código Terraform para provisionar um cluster do **Goo
 - **`provider.tf`**: Configura o provedor do Google Cloud.
 - **`terraform.tfvars`**: Arquivo onde estão inseridos os valores das variáveis.
 
-## Como Utilizar
+## Foco da Análise
 
-1.  **Pré-requisitos**:
-    *   Terraform e Google Cloud SDK instalados e autenticados.
+Esta seção foca nos seguintes pontos de segurança das configurações padrão do Google Kubernetes Engine (GKE):
 
-2.  **Execução**:
-    *   Navegue até este diretório (`gcp/05-gke`).
-    *   `terraform init`
-    *   `terraform plan`
-    *   `terraform apply`
-
-3.  **Limpeza**:
-    *   `terraform destroy`
+- **Acesso ao Endpoint:** O endpoint do cluster é público ou privado por padrão?
+- **Logging:** Os logs do control plane são ativados por padrão?
+- **Criptografia de Segredos:** A criptografia de segredos do Kubernetes usando KMS é habilitada?
+- **Rede:** Quais são as configurações de rede padrão para o node pool? Ele recebe IPs públicos?

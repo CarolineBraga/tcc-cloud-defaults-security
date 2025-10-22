@@ -10,29 +10,12 @@ Este diretório contém o código Terraform para provisionar uma instância do *
 - **`provider.tf`**: Configura o provedor do Google Cloud para o Terraform.
 - **`terraform.tfvars`**: Arquivo onde estão inseridos os valores das variáveis.
 
-## Como Utilizar
+## Foco da Análise
 
-1.  **Pré-requisitos**:
-    *   [Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli) instalado.
-    *   [Google Cloud SDK](https://cloud.google.com/sdk/docs/install) instalado e autenticado (`gcloud auth application-default login`).
+Esta seção foca nos seguintes pontos de segurança das configurações padrão do Google Compute Engine:
 
-2.  **Execução**:
-    *   Navegue até este diretório (`gcp/01-compute-engine`).
-    *   Inicialize o Terraform:
-        ```bash
-        terraform init
-        ```
-    *   Planeje a execução para revisar as alterações:
-        ```bash
-        terraform plan
-        ```
-    *   Aplique as configurações para criar a infraestrutura:
-        ```bash
-        terraform apply
-        ```
-
-3.  **Limpeza**:
-    *   Para destruir os recursos criados, execute:
-        ```bash
-        terraform destroy
-        ```
+- **Rede e Firewall:** A instância recebe um IP público por padrão? Quais portas estão abertas?
+- **Disco:** O disco raiz é criptografado por padrão? Qual o tipo de criptografia?
+- **Acesso à Metadados:** O acesso ao serviço de metadados (IMDS) está protegido?
+- **Permissões:** Quais permissões de serviço são atribuídas à VM por padrão?
+- **Monitoramento e Logging:** O Stackdriver (Cloud Monitoring/Logging) é ativado automaticamente?
