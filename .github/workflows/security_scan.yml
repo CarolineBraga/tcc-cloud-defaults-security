@@ -17,7 +17,8 @@ jobs:
       matrix:
         tf_directory: [
           'gcp/01-gce', 'gcp/02-cloud-storage', 'gcp/03-cloud-sql', 'gcp/04-iam', 'gcp/05-gke',
-          'aws/01-ec2', 'aws/02-s3', 'aws/03-rds', 'aws/04-iam', 'aws/05-eks'
+          'aws/01-ec2', 'aws/02-s3', 'aws/03-rds', 'aws/04-iam', 'aws/05-eks',
+          'azure/01-vm', 'azure/02-blob-storage', 'azure/03-sql-db', 'azure/04-iam', 'azure/05-aks'
         ]
     steps:
       - name: 'Checkout do código'
