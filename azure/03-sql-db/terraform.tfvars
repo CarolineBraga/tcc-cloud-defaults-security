@@ -1,0 +1,7 @@
+resource_group_name = "tcc-default-rg"
+location            = "eastus"
+server_name         = "tcc-sql-server"
+sql_version         = "12.0"
+admin_username      = "sqladmin"
+admin_password      = "Password12345!"
+db_name             = "tccdb"

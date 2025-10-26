@@ -1,0 +1,6 @@
+resource_group_name = "tcc-default-rg"
+location            = "eastus"
+aks_cluster_name    = "tcc-default-aks"
+dns_prefix          = "tccaks"
+node_pool_name      = "default"
+identity_type       = "SystemAssigned"
