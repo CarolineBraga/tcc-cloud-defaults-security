@@ -18,3 +18,8 @@ Esta seção foca nos seguintes pontos de segurança das configurações padrão
 - **Criptografia:** O bucket utiliza criptografia em repouso por padrão? Qual o tipo?
 - **Versionamento:** O versionamento de objetos está ativado?
 - **Logging:** O registro de acessos ao bucket é habilitado automaticamente?
+
+---
+
+**Documentação oficial do recurso Terraform:**
+- [google_storage_bucket](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/storage_bucket)

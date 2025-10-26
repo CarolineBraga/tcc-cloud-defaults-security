@@ -24,3 +24,8 @@ Esta seção foca nos seguintes pontos de segurança das configurações padrão
 - **Logging:** Os logs do control plane são ativados por padrão?
 - **Criptografia de Segredos:** A criptografia de segredos do Kubernetes usando KMS é habilitada?
 - **Rede:** Quais são as configurações de rede padrão para o node pool? Ele recebe IPs públicos?
+
+---
+
+**Documentação oficial do recurso Terraform:**
+- [google_container_cluster](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/container_cluster)

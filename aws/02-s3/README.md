@@ -8,3 +8,8 @@ Esta seção contém o código Terraform para provisionar um bucket Amazon S3 co
 - **Criptografia:** A criptografia em repouso (`Server-Side Encryption`) é habilitada por padrão? Qual o tipo?
 - **Versionamento:** O versionamento de objetos é ativado para prevenir exclusões acidentais?
 - **Logging:** O logging de acesso ao bucket é configurado por padrão?
+
+---
+
+**Documentação oficial do recurso Terraform:**
+- [aws_s3_bucket](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket)

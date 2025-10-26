@@ -17,3 +17,8 @@ Esta seção foca nos seguintes pontos de segurança das configurações padrão
 - **Permissões Iniciais:** Um usuário ou membro recém-criado tem permissões por padrão?
 - **Limites de Permissão:** É possível criar membros sem limites de permissão?
 - **Credenciais:** Como as credenciais de acesso são gerenciadas por padrão?
+
+---
+
+**Documentação oficial do recurso Terraform:**
+- [google_service_account](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/service_account)

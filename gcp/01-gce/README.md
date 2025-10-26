@@ -19,3 +19,8 @@ Esta seção foca nos seguintes pontos de segurança das configurações padrão
 - **Acesso à Metadados:** O acesso ao serviço de metadados (IMDS) está protegido?
 - **Permissões:** Quais permissões de serviço são atribuídas à VM por padrão?
 - **Monitoramento e Logging:** O Stackdriver (Cloud Monitoring/Logging) é ativado automaticamente?
+
+---
+
+**Documentação oficial do recurso Terraform:**
+- [google_compute_instance](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance)

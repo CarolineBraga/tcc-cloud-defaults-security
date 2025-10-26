@@ -1,0 +1,6 @@
+resource_group_name      = "tcc-default-rg"
+location                 = "eastus"
+storage_account_name     = "tccdefaultstorage"
+account_tier             = "Standard"
+account_replication_type = "LRS"
+container_name           = "tcc-container"

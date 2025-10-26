@@ -19,3 +19,8 @@ Esta seção foca nos seguintes pontos de segurança das configurações padrão
 - **Backups Automáticos:** Backups automáticos são habilitados?
 - **Autenticação:** A autenticação via IAM ou outros métodos seguros está ativada?
 - **Proteção contra Exclusão:** Existe proteção contra exclusão acidental?
+
+---
+
+**Documentação oficial do recurso Terraform:**
+- [google_sql_database_instance](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/sql_database_instance)
