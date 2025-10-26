@@ -18,3 +18,8 @@ A análise se concentrará em padrões de segurança, como:
 - **Criptografia de Volumes EBS:** O volume raiz (root) é criptografado por padrão?
 - **Monitoramento Detalhado:** O monitoramento detalhado do CloudWatch é ativado?
 - **IP Público:** Um endereço IP público é associado por padrão?
+
+---
+
+**Documentação oficial do recurso Terraform:**
+- [aws_instance](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance)

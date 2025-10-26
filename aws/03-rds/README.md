@@ -10,3 +10,8 @@ Esta seção provisiona uma instância de banco de dados Amazon RDS (PostgreSQL)
 - **Autenticação IAM:** A autenticação via IAM (`iam_database_authentication_enabled`) é ativada?
 - **Exclusão:** A proteção contra exclusão (`deletion_protection`) vem habilitada?
 - **Atualizações de Versão:** Atualizações automáticas de versões menores (`auto_minor_version_upgrade`) são ativadas?
+
+---
+
+**Documentação oficial do recurso Terraform:**
+- [aws_db_instance](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_instance)
