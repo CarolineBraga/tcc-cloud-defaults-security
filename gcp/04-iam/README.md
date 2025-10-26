@@ -10,16 +10,10 @@ Este diretório contém o código Terraform para atribuir um papel do **Google C
 - **`provider.tf`**: Configura o provedor do Google Cloud.
 - **`terraform.tfvars`**: Arquivo para inserir o e-mail do usuário e o papel a ser concedido. **É necessário editar este arquivo.**
 
-## Como Utilizar
+## Foco da Análise
 
-1.  **Pré-requisitos**:
-    *   Terraform e Google Cloud SDK instalados e autenticados.
+Esta seção foca nos seguintes pontos de segurança das configurações padrão do Google Cloud IAM:
 
-2.  **Execução**:
-    *   Navegue até este diretório (`gcp/04-iam`).
-    *   `terraform init`
-    *   `terraform plan`
-    *   `terraform apply`
-
-3.  **Limpeza**:
-    *   `terraform destroy`
+- **Permissões Iniciais:** Um usuário ou membro recém-criado tem permissões por padrão?
+- **Limites de Permissão:** É possível criar membros sem limites de permissão?
+- **Credenciais:** Como as credenciais de acesso são gerenciadas por padrão?

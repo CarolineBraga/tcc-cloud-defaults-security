@@ -10,16 +10,12 @@ Este diretório contém o código Terraform para provisionar uma instância do *
 - **`provider.tf`**: Configura o provedor do Google Cloud para o Terraform.
 - **`terraform.tfvars`**: Arquivo onde estão inseridos os valores das variáveis.
 
-## Como Utilizar
+## Foco da Análise
 
-1.  **Pré-requisitos**:
-    *   Terraform e Google Cloud SDK instalados e autenticados.
+Esta seção foca nos seguintes pontos de segurança das configurações padrão do Google Cloud SQL:
 
-2.  **Execução**:
-    *   Navegue até este diretório (`gcp/03-cloud-sql`).
-    *   `terraform init`
-    *   `terraform plan`
-    *   `terraform apply`
-
-3.  **Limpeza**:
-    *   `terraform destroy`
+- **Acessibilidade Pública:** A instância é acessível publicamente por padrão?
+- **Criptografia:** O armazenamento é criptografado por padrão?
+- **Backups Automáticos:** Backups automáticos são habilitados?
+- **Autenticação:** A autenticação via IAM ou outros métodos seguros está ativada?
+- **Proteção contra Exclusão:** Existe proteção contra exclusão acidental?
