@@ -52,7 +52,49 @@ A má configuração (*misconfiguration*) é o principal vetor de risco em ambie
 
 ## 📂 Estrutura do Repositório
 
-O projeto é organizado de forma modular por provedor de nuvem e serviço para facilitar a análise.
+O repositório foi desenhado para ser metodologicamente rigoroso, isolando cada um dos 15 cenários de teste em um projeto Terraform completo e independente.
+
+A estrutura é segmentada em três níveis: Provedor de Nuvem (ex: aws/), Serviço (ex: 01-ec2/) e os arquivos do projeto IaC (main.tf, etc.), conforme detalhado abaixo:
+
+```ascii
+.
+├── .github/
+│   └── workflows/
+│       └── security_scan.yml    # Pipeline de CI/CD (conforme Apêndice A)
+│
+├── aws/
+│   ├── 01-ec2/                  # Cenário: Máquina Virtual (EC2)
+│   │   ├── main.tf              # (Exemplo de projeto completo)
+│   │   ├── outputs.tf
+│   │   ├── provider.tf
+│   │   ├── terraform.tfvars
+│   │   └── variables.tf
+│   │
+│   ├── 02-s3/                   # Cenário: Armazenamento (S3)
+│   ├── 03-rds/                  # Cenário: Banco de Dados (RDS)
+│   ├── 04-iam/                  # Cenário: Identidade (IAM)
+│   ├── 05-eks/                  # Cenário: Kubernetes (EKS)
+│   └── README.md                # Readme específico da AWS
+│
+├── azure/
+│   ├── 01-vm/                   # Cenário: Máquina Virtual (Azure VM)
+│   ├── 02-blob-storage/         # Cenário: Armazenamento (Blob)
+│   ├── 03-sql-db/               # Cenário: Banco de Dados (SQL DB)
+│   ├── 04-iam/                  # Cenário: Identidade (IAM)
+│   ├── 05-aks/                  # Cenário: Kubernetes (AKS)
+│   └── README.md                # Readme específico do Azure
+│
+├── gcp/
+│   ├── 01-gce/                  # Cenário: Máquina Virtual (GCE)
+│   ├── 02-cloud-storage/        # Cenário: Armazenamento (GCS)
+│   ├── 03-cloud-sql/            # Cenário: Banco de Dados (Cloud SQL)
+│   ├── 04-iam/                  # Cenário: Identidade (IAM)
+│   ├── 05-gke/                  # Cenário: Kubernetes (GKE)
+│   └── README.md                # Readme específico do GCP
+│
+├── .gitignore
+└── README.md                    # O README principal do projeto
+```
 
 ## 🔄 Fluxo de Trabalho e Pipeline
 
